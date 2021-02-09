@@ -22,7 +22,6 @@ document.body.addEventListener('submit', (e) => {
 })
 
 ramenMenu.addEventListener('click', (e) => {
-    // e.preventDefault()
     switch (true) {
         case (e.target.className === "delete-button"):
             deleteRamen(e)
@@ -34,12 +33,7 @@ ramenMenu.addEventListener('click', (e) => {
     }
 })
 
-
-
-
-
 // LOGIC HANDLERS
-
 function deleteRamen(e){
     const rmvRamenPic = e.target.previousSibling
     const rmvDiv = rmvRamenPic.closest('.img-holder')
@@ -87,7 +81,6 @@ function addNewRamen(e){
         renderRamen(ramenInfo)
         displayDetails(ramenInfo)
     })
-
     e.target.reset()
 }
 
@@ -107,19 +100,8 @@ function updateInfo(e){
         body : JSON.stringify(newRamen)
     })
     .then(response => response.json())
-    .then(ramenInfo => displayUpdates(ramenInfo))
+    .then(ramenInfo => displayDetails(ramenInfo))
 }
-
-function displayUpdates(info){
-    // if (info.id === newCommentForm.dataset.id){
-    const rating = newCommentForm.querySelector('input[type=text]')
-    rating.value = info.rating
-
-    const comment = newCommentForm.querySelector('textarea')
-    comment.value = info.comment
-    // }
-}
-
 
 function getRamenInfo(id){
     fetch(`${fetchURL}/${id}`)

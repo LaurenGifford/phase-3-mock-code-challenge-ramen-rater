@@ -39,6 +39,14 @@
       "image": "./assets/ramen/kojiro.jpg",
       "rating": "6",
       "comment": "Perfect for a cold night."
+    },
+    {
+      "name": "test2",
+      "restaurant": "test2",
+      "image": "https://www.acouplecooks.com/wp-content/uploads/2016/03/Easy-Vegetarian-Ramen-020.jpg",
+      "rating": "2",
+      "comment": "yummy yummy",
+      "id": 7
     }
   ]
 }
